@@ -1,6 +1,7 @@
 """
 """
 
+import csv
 import io
 import sys
 
@@ -36,14 +37,15 @@ class GCT:
         """
         self._dataframe = value
 
-    def export(self, buffer: io.TextIOBase):
+    def export(self, buffer: io.TextIOBase, **kwargs):
         """
         :param buffer:
         """
-        buffer.write(self._version)
+        buffer.write(f"{self._version}\n")
         buffer.write(f"{self._delimiter.join(map(str, self.dataframe.shape))}\n")
 
-        self.dataframe.to_csv(buffer, sep=self._delimiter)
+
+        self.dataframe.to_csv(buffer, sep=self._delimiter, quoting=csv.QUOTE_NONE, **kwargs)
 
     def write(self, path: str):
         """
