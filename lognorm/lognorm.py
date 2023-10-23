@@ -2,13 +2,14 @@
 """
 
 import numpy as np
-import pandas as pd
 
 
-def log_normalize(df: pd.DataFrame) -> pd.DataFrame:
+def log_normalize(
+    array: np.ndarray[None, np.dtype[np.float64]]
+) -> np.ndarray[None, np.dtype[np.float64]]:
     """
     :param df:
     :return:
     """
-    df[df > 0] = np.log(df[df > 0])
-    return df
+    array[array > 0] = np.log(array[array > 0])
+    return array
