@@ -1,4 +1,5 @@
 """
+Usage: python -m lognorm [-h] [-f FILENAME] [-o OUTPUT] [-v] [-d]
 """
 
 from . import main

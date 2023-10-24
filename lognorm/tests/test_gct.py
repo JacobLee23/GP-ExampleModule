@@ -53,6 +53,6 @@ class TestGCT:
             content = response.read()
             
         with io.StringIO() as buffer:
-            gct.export(buffer, lineterminator="\n")
+            gct.export(gct.dataframe, buffer, lineterminator="\n")
 
             assert buffer.getvalue().encode() == content, gct._source
