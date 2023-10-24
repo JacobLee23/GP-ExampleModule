@@ -49,7 +49,7 @@ class Parser(argparse.ArgumentParser):
 def main() -> None:
     parser = Parser()
 
-    logger = logging.getLogger("lognorm")
+    logger = logging.getLogger(__name__)
     if parser["debug"]:
         logger.setLevel(logging.DEBUG)
     elif parser["verbose"]:
