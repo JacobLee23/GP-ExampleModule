@@ -43,14 +43,11 @@ class GCT:
         dataframe.to_csv(buffer, sep=cls._delimiter, quoting=csv.QUOTE_NONE, **kwargs)
 
     @classmethod
-    def write(cls, dataframe: pd.DataFrame, path: str) -> str:
+    def write(cls, dataframe: pd.DataFrame, path: str) -> None:
         """
         Writes the contents of a ``DataFrame`` to a GCT file located at ``path``.
 
         :param path: The path to the file to write processed GCT data to
-        :return: The path of the file to which the processed GCT data was written
         """
         with open(path, "w", encoding="utf-8", newline="") as file:
             cls.export(dataframe, file)
-
-        return path

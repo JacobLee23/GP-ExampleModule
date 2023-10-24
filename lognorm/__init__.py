@@ -74,8 +74,7 @@ def main() -> None:
     dataframe = log_normalize(dataframe)
 
     logger.debug("Write processed GCT data to %s", parser["output"])
-    output = GCT.write(dataframe, parser["output"])
-    logger.debug("Processed GCT data written to %s", output)
+    GCT.write(dataframe, parser["output"])
 
     exec_end = datetime.datetime.now()
     logger.info("Job completed: %s", exec_end.strftime("%c"))
