@@ -3,7 +3,6 @@
 
 import csv
 import io
-import sys
 
 import pandas as pd
 
@@ -37,19 +36,20 @@ class GCT:
         """
         self._dataframe = value
 
-    def export(self, buffer: io.TextIOBase, **kwargs):
+    def export(self, buffer: io.TextIOBase, **kwargs) -> None:
         """
         :param buffer:
         """
         buffer.write(f"{self._version}\n")
         buffer.write(f"{self._delimiter.join(map(str, self.dataframe.shape))}\n")
 
-
         self.dataframe.to_csv(buffer, sep=self._delimiter, quoting=csv.QUOTE_NONE, **kwargs)
 
-    def write(self, path: str):
+    def write(self, path: str) -> str:
         """
         :param path:
         """
         with open(path, "w", encoding="utf-8", newline="") as file:
             self.export(file)
+
+        return path
