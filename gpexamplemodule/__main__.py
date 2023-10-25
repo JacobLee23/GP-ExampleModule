@@ -1,4 +1,5 @@
 """
+Entry point: ``$ python -m gpexamplemodule``.
 """
 
 from . import main

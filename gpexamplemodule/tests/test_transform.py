@@ -1,11 +1,11 @@
 """
-Unit tests for :py:mod:`lognorm.lognorm`.
+Unit tests for :py:mod:`gpexamplemodule.transform`.
 """
 
 import numpy as np
 import pytest
 
-from lognorm import lognorm
+from gpexamplemodule import transform
 
 
 @pytest.mark.parametrize(
@@ -30,6 +30,6 @@ from lognorm import lognorm
 )
 def test_log_normalize(array: np.ndarray, expected: np.ndarray):
     """
-    Unit test for :py:func:`lognorm.log_normalize`.
+    Unit test for :py:func:`transform.log_normalize`.
     """
-    assert np.array_equal(lognorm.log_normalize(array), expected), array
+    assert np.array_equal(transform.log_normalize(array), expected), array
