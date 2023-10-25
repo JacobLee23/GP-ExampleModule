@@ -22,4 +22,4 @@ RUN pipenv install --system --deploy --ignore-pipfile
 #
 # $ docker build -t gpexamplemodule:latest .
 # $ docker run gpexamplemodule:latest [-h] [-f FILENAME] [-o OUTPUT] [-v]
-ENTRYPOINT ["python", "-m", "lognorm"]
+ENTRYPOINT ["python", "-m", "gpexamplemodule"]

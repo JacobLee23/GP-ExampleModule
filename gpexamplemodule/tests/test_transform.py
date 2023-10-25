@@ -1,11 +1,11 @@
 """
-Unit tests for :py:mod:`lognorm.transform`.
+Unit tests for :py:mod:`gpexamplemodule.transform`.
 """
 
 import numpy as np
 import pytest
 
-from lognorm import transform
+from gpexamplemodule import transform
 
 
 @pytest.mark.parametrize(

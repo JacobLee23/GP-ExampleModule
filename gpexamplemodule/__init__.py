@@ -17,7 +17,7 @@ class Parser(argparse.ArgumentParser):
     Parser for command-line arguments.
     """
     def __init__(self):
-        super().__init__(prog="lognorm", description=__doc__, epilog="5'-NGG-3'")
+        super().__init__(prog=__name__, description=__doc__, epilog="5'-NGG-3'")
 
         self.add_argument(
             "-f", "--filename", type=str,
@@ -41,7 +41,7 @@ class Parser(argparse.ArgumentParser):
 
 def main() -> None:
     """
-    See ``$ python -m lognorm -h``.
+    Entry point: ``$ python -m gpexamplemodule``.
     """
     parser = Parser()
 

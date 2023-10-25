@@ -1,5 +1,5 @@
 """
-See ``$ python -m lognorm -h``.
+Entry point: ``$ python -m gpexamplemodule``.
 """
 
 from . import main
