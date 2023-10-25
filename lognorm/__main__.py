@@ -1,5 +1,5 @@
 """
-Usage: python -m lognorm [-h] [-f FILENAME] [-o OUTPUT] [-v] [-d]
+See ``$ python -m lognorm -h``.
 """
 
 from . import main

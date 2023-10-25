@@ -29,12 +29,8 @@ class Parser(argparse.ArgumentParser):
         )
 
         self.add_argument(
-            "-v", "--verbose", action="store_true",
-            help="Increase verbosity (INFO)"
-        )
-        self.add_argument(
-            "-d", "--debug", action="store_true",
-            help="Increase verbosity (DEBUG)"
+            "-v", "--verbose", action="count", default=0,
+            help="Increase verbosity"
         )
 
         self._arguments = self.parse_args()
@@ -45,17 +41,17 @@ class Parser(argparse.ArgumentParser):
 
 def main() -> None:
     """
-    Usage: python -m lognorm [-h] [-f FILENAME] [-o OUTPUT] [-v] [-d]
+    See ``$ python -m lognorm -h``.
     """
     parser = Parser()
 
     logger = logging.getLogger(__name__)
-    if parser["debug"]:
-        logger.setLevel(logging.DEBUG)
-    elif parser["verbose"]:
+    if parser["verbose"] == 0:
+        logger.setLevel(logging.WARNING)
+    elif parser["verbose"] == 1:
         logger.setLevel(logging.INFO)
     else:
-        logger.setLevel(logging.WARNING)
+        logger.setLevel(logging.DEBUG)
 
     stream_handler = logging.StreamHandler()
     formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
