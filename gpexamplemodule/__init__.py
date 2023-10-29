@@ -24,7 +24,7 @@ class Parser(argparse.ArgumentParser):
             help="Path of the file to read pre-processed GCT data from"
         )
         self.add_argument(
-            "-o", "--output", type=str,
+            "-o", "--output", type=str, default="out.gct",
             help="Path to the file to write processed GCT data to"
         )
 
