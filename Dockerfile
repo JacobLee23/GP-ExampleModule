@@ -17,9 +17,3 @@ RUN python -m pip install pipenv
 # Use --ignore-pipfile to install packages directly from Pipfile.lock (as opposed to installing
 # from Pipfile)
 RUN pipenv install --system --deploy --ignore-pipfile
-
-# Configure container to run as an executable
-#
-# $ docker build -t gpexamplemodule:latest .
-# $ docker run gpexamplemodule:latest [-h] [-f FILENAME] [-o OUTPUT] [-v]
-ENTRYPOINT ["python", "-m", "gpexamplemodule"]
